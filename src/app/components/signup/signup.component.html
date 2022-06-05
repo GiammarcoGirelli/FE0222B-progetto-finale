@@ -1,0 +1,25 @@
+<form  [formGroup]="formSignup" (submit)="postaUserApi(formSignup)">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">username</label>
+    <input type="text" class="form-control"  name="username" aria-describedby="emailHelp" formControlName="username">
+    <div class="form-text">Non condivideremo le tue informazioni con terze parti. *Campo obbligatorio</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">email</label>
+    <input type="text" class="form-control" name="email" formControlName="email" placeholder="esempio@esempio.com">
+    <div class="form-text">*Campo obbligatorio</div>
+  </div>  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">password</label>
+    <input type="password" class="form-control" name="password" aria-describedby="emailHelp" formControlName="password">
+    <div class="form-text">*Campo obbligatorio</div>
+  </div>
+  <div class="mb-3" id="campoSelect">
+    <label for="role">Ruolo</label>
+    <select formControlName="role" id="role">
+      <option value="user">User</option>
+      <option value="admin">Admin</option>
+    </select>
+  </div>
+  <button type="submit">SignUp</button>
+</form>
+

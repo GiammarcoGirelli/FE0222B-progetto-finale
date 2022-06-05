@@ -1,0 +1,35 @@
+<!-- <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Data</th>
+      <th scope="col">Numero</th>
+      <th scope="col">Anno</th>
+      <th scope="col">Importo</th>
+      <th scope="col">Stato</th>
+      <th scope="col">Cliente</th>
+      <button type="button">Dettaglio</button>
+    </tr>
+  </thead>
+  <tbody *ngFor="let p of fatture">
+    <tr>
+      <th scope="col">{{ p.id }}</th>
+      <th scope="col">{{ p.data }}</th>
+      <th scope="col">{{ p.numero }}</th>
+      <th scope="col">{{ p.anno }}</th>
+      <th scope="col">{{ p.importo }}</th>
+      <th scope="col">{{ p.stato.nome }}</th>
+      <th scope="col">{{ p.cliente.nomeContatto }}</th>
+      <button type="button">Dettaglio</button>
+  </tbody> -->
+  <div class="card" *ngFor="let p of fatture">
+    <h5 class="card-header">{{ p.cliente.nomeContatto}} {{ p.cliente.cognomeContatto }}</h5>
+    <div class="card-body">
+      <p class="card-text">Data Emissione : {{ p.data }}</p>
+      <p class="card-text">Numero Fattura : {{ p.numero }}</p>
+      <p class="card-text">Anno : {{ p.anno }}</p>
+      <p class="card-text">Importo in euro : {{ p.importo}}</p>
+      <button type="button" [routerLink]="['/', p.id]">Aggiungi Fattura</button>
+      <button type="button" [routerLink]="['/dettaglio-fattura', p.id]">Dettaglio</button>
+    </div>
+  </div>

@@ -1,0 +1,55 @@
+<!-- <table class="table table-hover">
+
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Email</th>
+      <th scope="col">Ragione Sociale</th>
+      <th scope="col">Partita Iva</th>
+      <th scope="col">Tipo Cliente</th>
+      <th scope="col">Pec</th>
+      <th scope="col">Nome Contatto</th>
+      <th scope="col">Telefono Contatto</th>
+      <th scope="col">Email Contatto</th>
+      <th scope="col">Indirizzo Sede Operativa</th>
+      <th scope="col">Indirizzo Sede Legale</th>
+      <button>Aggiungi Cliente</button>
+    </tr>
+  </thead>
+  <tbody *ngFor="let p of clienti">
+    <tr>
+      <th scope="col">{{ p.id }}</th>
+      <th scope="col">{{ p.email }}</th>
+      <th scope="col">{{ p.ragioneSociale}}</th>
+      <th scope="col">{{ p.partitaIva}}</th>
+      <th scope="col">{{ p.tipoCliente}}</th>
+      <th scope="col">{{ p.pec }}</th>
+      <th scope="col">{{ p.nomeContatto }}</th>
+      <th scope="col">{{ p.telefonoContatto }}</th>
+      <th scope="col">{{ p.emailContatto }}</th>
+      <th scope="col" *ngIf="p.indirizzoSedeOperativa">{{ p.indirizzoSedeOperativa.via }}</th>
+      <th scope="col" *ngIf="p.indirizzoSedeLegale">{{ p.indirizzoSedeLegale.via }}+{{ p.indirizzoSedeLegale.provincia }}</th>
+      <button type="button" [routerLink]="['/dettaglio-cliente', p.id]">Dettaglio</button>
+      <button type="button" [routerLink]="['/modifica-cliente', p.id]">Modifica</button>
+    </tr>
+  </tbody>
+</table> -->
+<div class="container">
+  <button type="button" [routerLink]="['/nuovo-cliente']">Aggiungi Nuovo Cliente</button>
+</div>
+<div class="card" *ngFor="let p of clienti">
+  <h5 class="card-header">Cliente Numero {{ p.id }}</h5>
+  <div class="card-body">
+    <h5 class="card-title">{{ p.nomeContatto}} {{ p.cognomeContatto }}</h5>
+    <p class="card-text">Email : {{ p.email }}</p>
+    <p class="card-text">Telefono Cliente : {{ p.telefonoContatto }}</p>
+    <p class="card-text">Ragione Sociale : {{ p.ragioneSociale }}</p>
+    <p class="card-text">Partita IVA : {{ p.partitaIva}}</p>
+    <p class="card-text">PEC : {{ p.pec }}</p>
+    <p class="card-text">Indirizzo Sede Operativa : {{ p.indirizzoSedeOperativa.via }}</p>
+    <p class="card-text">Indirizzo Sede Legale : {{ p.indirizzoSedeLegale.via }}</p>
+    <p class="card-text">Tipo Cliente : {{ p.tipoCliente }}</p>
+    <button type="button" [routerLink]="['/dettaglio-cliente', p.id]">Dettaglio</button>
+    <button type="button" [routerLink]="['/modifica-cliente', p.id]">Modifica</button>
+  </div>
+</div>

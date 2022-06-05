@@ -1,0 +1,16 @@
+<table class="table table-hover" >
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Username</th>
+      <th scope="col">Email</th>
+      <th scope="col">Ruolo</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let i of datiUser.content">
+    <th>{{ i.id }}</th>
+    <th>{{ i.username }}</th>
+    <th>{{ i.email }}</th>
+    <th>{{ i.roles[0].roleName }}</th>
+  </tbody>
+</table>

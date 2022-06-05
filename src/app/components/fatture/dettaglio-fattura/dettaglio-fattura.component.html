@@ -1,0 +1,20 @@
+<!-- <div>
+  <p>{{ fatturaCliente.importo }}</p>
+  <p>{{ fatturaCliente.anno }}</p>
+  <p>{{ fatturaCliente.data }}</p>
+  <p>{{ fatturaCliente.numero }}</p>
+  <p>{{ fatturaCliente.cliente.nomeContatto }}</p>
+  <p>{{ fatturaCliente.cliente.cognomeContatto }}</p>
+  <p>{{ fatturaCliente.stato.nome }}</p>
+  <p>{{ fatturaCliente.id}}</p>
+</div> -->
+<div class="card">
+  <h5 class="card-header">{{ fatturaCliente.cliente.nomeContatto}} {{ fatturaCliente.cliente.cognomeContatto }}</h5>
+  <div class="card-body">
+    <p class="card-text">Data Emissione : {{ fatturaCliente.data }}</p>
+    <p class="card-text">Numero Fattura : {{ fatturaCliente.numero }}</p>
+    <p class="card-text">Anno : {{ fatturaCliente.anno }}</p>
+    <p class="card-text">Importo in euro : {{ fatturaCliente.importo}}</p>
+    <p class="card-text">Stato Fattura : {{ fatturaCliente.stato.nome }}</p>
+  </div>
+</div>
